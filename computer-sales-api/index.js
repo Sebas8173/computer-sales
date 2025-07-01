@@ -1,4 +1,4 @@
-const port = 3001;
+const port = process.env.PORT || 3001;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -17,4 +17,4 @@ const computerRouter = require("./routes/computersRoutes");
 
 app.use("/computerstore", computerRouter);
 
-app.listen(port, () => console.log("MY Computer Store Server is running on port --> " + port));
+app.listen(port, () => console.log(`MY Computer Store Server is running on port --> ${port}`));
